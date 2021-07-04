@@ -1,3 +1,5 @@
+//リピート機能
+
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include <netinet/in.h>
@@ -87,7 +89,7 @@ int main(int argc, char** argv) {
     if (n == 0) break;
     bn = fread(bgm, 1, bufsize, bgmf);
     if (bn == -1) die("bgmread");
-    if (n == 0) break;
+    if (bn != bufsize) rewind(bgmf);
     for(int i=0; i<bn; i++){
       buf[i] += bgm[i];
     }
