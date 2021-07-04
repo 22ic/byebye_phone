@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
 
   if (readf == NULL) die("popen readf");
 
-  FILE* bgmf = fopen("koppepan2.raw", "r");
+  FILE* bgmf = fopen("koppepan.raw", "r");
 
   int bufsize = 8192;
   unsigned char buf[bufsize];
